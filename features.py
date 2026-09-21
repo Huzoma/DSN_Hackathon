@@ -13,7 +13,7 @@ train_data['price_tier'] = pd.qcut(train_data['product_price'], q=4, labels=['Lo
 
 # 4. FEATURE ENGINEERING: Text to Numbers (One-Hot Encoding)
 # pd.get_dummies converts categorical text columns into True/False (1/0) binary columns
-columns_to_encode = ['store_format', 'store_location_tier', 'store_size', 'fat_content', 'price_tier']
+columns_to_encode = ['store_format', 'store_location_tier', 'store_size', 'fat_content', 'price_tier', 'product_category']
 train_engineered = pd.get_dummies(train_data, columns=columns_to_encode, drop_first=True)
 
 # 5. Output the results
